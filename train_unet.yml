@@ -5,8 +5,8 @@ iters: 15000
 
 train_dataset:  # Training dataset
   type: Dataset # The name of the training dataset class
-  dataset_root: /x/data
-  train_path: /x/data/train.txt
+  dataset_root: /kaggle/working/data
+  train_path: /kaggle/working/data/train.txt
   num_classes: 2  # Number of pixel categories
   img_channels: 1
   mode: train # Indicate the dataset for training
@@ -26,8 +26,8 @@ train_dataset:  # Training dataset
 
 val_dataset:  # Validating dataset
   type: Dataset # The name of the training dataset class
-  dataset_root: /x/data
-  val_path: /x/data/val.txt
+  dataset_root: /kaggle/working/data
+  val_path: /kaggle/working/data/val.txt
   num_classes: 2  # Number of pixel categories
   img_channels: 1
   mode: val # Indicate the dataset for validating
