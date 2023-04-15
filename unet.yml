@@ -1,6 +1,6 @@
 
 
-batch_size: 50
+batch_size: 100
 iters: 500
 
 train_dataset:  # Training dataset
