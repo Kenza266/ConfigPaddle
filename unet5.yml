@@ -1,0 +1,57 @@
+
+
+batch_size: 5
+iters: 500
+
+train_dataset:  # Training dataset
+  type: Dataset # The name of the training dataset class
+  dataset_root: /kaggle/working/data
+  train_path: /kaggle/working/data/train.txt
+  num_classes: 2  # Number of pixel categories
+  img_channels: 1
+  mode: train # Indicate the dataset for training
+  transforms: # Data transformation and data augmentation
+    - type: ResizeStepScaling # Random resize the image and label to 0.5x~2.0x
+      min_scale_factor: 0.5
+      max_scale_factor: 2.0
+      scale_step_size: 0.25
+    - type: RandomPaddingCrop # Random crop the resized image and label
+      crop_size: [128, 128]
+    - type: RandomHorizontalFlip  # Flip the image horizontally with a certain probability
+    - type: RandomDistort # Change the brightness, contrast and saturation
+      brightness_range: 0.5
+      contrast_range: 0.5
+      saturation_range: 0.5
+    - type: Normalize # Normalize the image
+
+val_dataset:  # Validating dataset
+  type: Dataset # The name of the training dataset class
+  dataset_root: /kaggle/working/data
+  val_path: /kaggle/working/data/val.txt
+  num_classes: 2  # Number of pixel categories
+  img_channels: 1
+  mode: val # Indicate the dataset for validating
+  transforms: # Data transformation and data augmentation
+    - type: Normalize # Normalize the image
+
+optimizer:
+  type: sgd
+  momentum: 0.9
+  weight_decay: 4.0e-5
+
+lr_scheduler:
+  type: PolynomialDecay
+  learning_rate: 0.01
+  end_lr: 0
+  power: 0.9
+
+loss:
+  types:
+    - type: DiceLoss
+  coef: [1]
+
+model:
+  type: UNet
+  num_classes: 2
+  use_deconv: False
+  pretrained: Null
