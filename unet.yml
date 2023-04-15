@@ -1,7 +1,7 @@
 
 
 batch_size: 165
-iters: 1500
+iters: 750
 
 train_dataset:  # Training dataset
   type: Dataset # The name of the training dataset class
