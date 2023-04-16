@@ -1,7 +1,9 @@
-data_root: /kaggle/input/
+
 
 batch_size: 24
 iters: 140
+
+data_root: /kaggle/input/
 
 train_dataset:
   type: Dataset
