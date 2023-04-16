@@ -7,8 +7,7 @@ data_root: /kaggle/input/
 
 train_dataset:
   type: Abdomen
-  dataset_root: /kaggle/input/abdomen/abdomen_phase0
-  result_dir: /kaggle/input/abdomen/abdomen_phase1
+  dataset_root: /kaggle/working/data
   transforms:
     - type: RandomFlip3D
       flip_axis: [1, 2]
@@ -20,35 +19,31 @@ train_dataset:
     - type: Resize3D
       size: [1, 224, 224]
   mode: train
-  num_classes: 9
+  num_classes: 2
 
 val_dataset:
   type: Abdomen
-  dataset_root: /kaggle/input/abdomen/abdomen_phase0
-  result_dir: /kaggle/input/abdomen/abdomen_phase1
-  num_classes: 9
+  dataset_root: /kaggle/working/data
+  num_classes: 2
   transforms:
     - type: Resize3D
       size: [1, 224, 224]
   mode: val
-  dataset_json_path: /kaggle/input/abdomen/abdomen_raw/dataset.json
 
 test_dataset:
   type: Abdomen
-  dataset_root: /kaggle/input/abdomen/abdomen_phase0
-  result_dir: /kaggle/input/abdomen/abdomen_phase1
-  num_classes: 9
+  dataset_root: /kaggle/working/data
+  num_classes: 2
   transforms:
     - type: Resize3D
       size: [1, 224, 224]
   mode: val
-  dataset_json_path: /kaggle/input/abdomen/abdomen_raw/dataset.json
 
 model:
   type: SwinUNet
   backbone:
     type: SwinTransformer_tinier_patch4_window7_224
-  num_classes: 9
+  num_classes: 2
   pretrained: https://paddleseg.bj.bcebos.com/paddleseg3d/synapse/abdomen/swinunet_abdomen_224_224_1_14k_5e-2/swinunet_pretrained.zip
 
 optimizer:
@@ -64,11 +59,7 @@ lr_scheduler:
 
 loss:
   types:
-    - type: MixedLoss
-      losses:
-        - type: CrossEntropyLoss
-        - type: DiceLoss
-      coef: [0.4, 0.6]
+    - type: DiceLoss
   coef: [1]
 
 export:
