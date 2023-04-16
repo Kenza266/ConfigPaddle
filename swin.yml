@@ -1,4 +1,4 @@
-
+data_root: /kaggle/input/
 
 batch_size: 24
 iters: 140
