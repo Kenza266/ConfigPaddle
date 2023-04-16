@@ -6,7 +6,7 @@ iters: 140
 data_root: /kaggle/input/
 
 train_dataset:
-  type: Dataset
+  type: Abdomen
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   transforms:
@@ -23,7 +23,7 @@ train_dataset:
   num_classes: 9
 
 val_dataset:
-  type: Dataset
+  type: Abdomen
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   num_classes: 9
@@ -34,7 +34,7 @@ val_dataset:
   dataset_json_path: /kaggle/input/abdomen/abdomen_raw/dataset.json
 
 test_dataset:
-  type: Dataset
+  type: Abdomen
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   num_classes: 9
