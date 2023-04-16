@@ -53,6 +53,6 @@ loss:
 model:
   type: UNet
   num_classes: 2
-  in_channels: 1
+  in_channels: 3
   use_deconv: False
   pretrained: Null
