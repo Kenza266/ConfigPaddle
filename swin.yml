@@ -8,6 +8,7 @@ data_root: /kaggle/input/
 train_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
+  result_dir: /kaggle/working/data/results
   transforms:
     - type: RandomFlip3D
       flip_axis: [1, 2]
@@ -24,6 +25,7 @@ train_dataset:
 val_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
+  result_dir: /kaggle/working/data/results
   num_classes: 2
   transforms:
     - type: Resize3D
@@ -33,6 +35,7 @@ val_dataset:
 test_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
+  result_dir: /kaggle/working/data/results
   num_classes: 2
   transforms:
     - type: Resize3D
