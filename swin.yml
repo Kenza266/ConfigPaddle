@@ -62,7 +62,11 @@ lr_scheduler:
 
 loss:
   types:
-    - type: DiceLoss
+    - type: MixedLoss
+      losses:
+        - type: CrossEntropyLoss
+        - type: DiceLoss
+      coef: [0.4, 0.6]
   coef: [1]
 
 export:
@@ -71,3 +75,5 @@ export:
       size: [ 1 ,224, 224 ]
   inference_helper:
     type: InferenceHelper2D
+    
+    
