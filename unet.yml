@@ -8,7 +8,7 @@ train_dataset:  # Training dataset
   dataset_root: /kaggle/working/data
   train_path: /kaggle/working/data/train.txt
   num_classes: 2  # Number of pixel categories
-  img_channels: 1
+  img_channels: 3
   mode: train # Indicate the dataset for training
   transforms: # Data transformation and data augmentation
     - type: ResizeStepScaling # Random resize the image and label to 0.5x~2.0x
@@ -29,7 +29,7 @@ val_dataset:  # Validating dataset
   dataset_root: /kaggle/working/data
   val_path: /kaggle/working/data/val.txt
   num_classes: 2  # Number of pixel categories
-  img_channels: 1
+  img_channels: 3
   mode: val # Indicate the dataset for validating
   transforms: # Data transformation and data augmentation
     - type: Normalize # Normalize the image
