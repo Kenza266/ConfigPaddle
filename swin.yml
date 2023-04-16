@@ -4,7 +4,7 @@ batch_size: 24
 iters: 140
 
 train_dataset:
-  type: SwinUNet
+  type: Dataset
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   transforms:
@@ -21,7 +21,7 @@ train_dataset:
   num_classes: 9
 
 val_dataset:
-  type: SwinUNet
+  type: Dataset
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   num_classes: 9
@@ -32,7 +32,7 @@ val_dataset:
   dataset_json_path: /kaggle/input/abdomen/abdomen_raw/dataset.json
 
 test_dataset:
-  type: SwinUNet
+  type: Dataset
   dataset_root: /kaggle/input/abdomen/abdomen_phase0
   result_dir: /kaggle/input/abdomen/abdomen_phase1
   num_classes: 9
