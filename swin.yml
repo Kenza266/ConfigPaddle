@@ -10,14 +10,14 @@ train_dataset:
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
   mode: train
-  transforms: Null
+  transforms: ContrastAugmentationTransform
   num_classes: 2
 
 val_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
-  transforms: Null
+  transforms: ContrastAugmentationTransform
   num_classes: 2
   mode: val
 
@@ -25,7 +25,7 @@ test_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
-  transforms: Null
+  transforms: ContrastAugmentationTransform
   num_classes: 2
   mode: val
 
