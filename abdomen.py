@@ -63,6 +63,7 @@ class Abdomen(MedicalDataset):
                 for i in range(images.shape[0]):
                     image = images[i]
                     label = labels[i]
+                    print('----', image.shape)
                     image, label = self.transforms(im=image, label=label)
                     image_list.append(image)
                     label_list.append(label)
