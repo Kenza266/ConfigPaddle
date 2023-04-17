@@ -11,7 +11,15 @@ train_dataset:
   result_dir: /kaggle/working/data/results
   mode: train
   transforms: 
-    - type: ContrastAugmentationTransform
+    - type: RandomFlip3D
+      flip_axis: [1, 2]
+    - type: RandomQuarterTurn3D
+      rotate_planes: [[ 1, 2 ]]
+    - type: RandomRotation3D
+      degrees: 20
+      rotate_planes: [[1, 2]]
+    - type: Resize3D
+      size: [1, 224, 224]
   num_classes: 2
 
 val_dataset:
