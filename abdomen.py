@@ -65,7 +65,7 @@ class Abdomen(MedicalDataset):
                     label = labels[i]
                     image, label = self.transforms(im=image, label=label)
                     image_list.append(image)
-                    label_list.append(label[np.newaxis, :, :, :])
+                    label_list.append(label)
                 image = np.concatenate(image_list)
                 label = np.concatenate(label_list)
 
