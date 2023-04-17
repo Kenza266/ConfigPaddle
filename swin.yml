@@ -10,7 +10,7 @@ train_dataset:
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
   mode: train
-  transforms: 
+  transforms:
     - type: RandomFlip3D
       flip_axis: [1, 2]
     - type: RandomQuarterTurn3D
@@ -26,8 +26,9 @@ val_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
-  transforms: 
-    - type: ContrastAugmentationTransform
+  transforms:
+    - type: Resize3D
+      size: [1, 224, 224]
   num_classes: 2
   mode: val
 
@@ -35,8 +36,9 @@ test_dataset:
   type: Abdomen
   dataset_root: /kaggle/working/data
   result_dir: /kaggle/working/data/results
-  transforms: 
-    - type: ContrastAugmentationTransform
+  transforms:
+    - type: Resize3D
+      size: [1, 224, 224]
   num_classes: 2
   mode: val
 
