@@ -51,8 +51,8 @@ class Abdomen(MedicalDataset):
             image = image[np.newaxis, :, :]
             label = label[np.newaxis, :, :]
         else:
-            images = image[:, np.newaxis, :, :]
-            labels = label[:, np.newaxis, :, :]
+            images = image[np.newaxis, :, :]
+            labels = label[np.newaxis, :, :]
 
         if self.transforms:
             if self.mode == "train":
