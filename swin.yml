@@ -31,6 +31,7 @@ val_dataset:
     - type: Resize3D
       size: [1, 224, 224]
   mode: val
+  dataset_json_path: Null
 
 test_dataset:
   type: Abdomen
@@ -41,6 +42,7 @@ test_dataset:
     - type: Resize3D
       size: [1, 224, 224]
   mode: val
+  dataset_json_path: Null
 
 model:
   type: SwinUNet
