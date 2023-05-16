@@ -48,7 +48,7 @@ lr_scheduler:
 loss:
   types:
     - type: DiceLoss
-    weight: [0.25, 0.75]
+      weight: [0.25, 0.75]
   coef: [1]
 
 model:
